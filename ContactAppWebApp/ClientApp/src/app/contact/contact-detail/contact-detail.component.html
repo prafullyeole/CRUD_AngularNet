@@ -1,0 +1,81 @@
+<div style="width: 400px; margin: auto;">
+  <p>{{ message }}</p>
+    <div *ngIf="currentContact" class="edit-form">
+      <h4>Contact Details</h4>
+      <form>
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            [(ngModel)]="currentContact.firstName"
+            name="firstName"
+          />
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastName"
+              [(ngModel)]="currentContact.lastName"
+              name="lastName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              [(ngModel)]="currentContact.email"
+              name="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phoneNumber"
+              [(ngModel)]="currentContact.phoneNumber"
+              name="phoneNumber"
+            />
+          </div>       
+        <div class="form-group">       
+          <label *ngIf="currentContact.status" style="color: forestgreen;"><strong>Active</strong></label>
+          <label *ngIf="!currentContact.status" style="color:gray;"><strong>In Active</strong></label>
+        </div>
+      </form>
+  
+      <button
+        class="badge badge-primary mr-2"
+        *ngIf="currentContact.status"
+        (click)="updateStatus(false)">
+        In Active
+      </button>
+      <button
+        *ngIf="!currentContact.status"
+        class="badge badge-primary mr-2"
+        (click)="updateStatus(true)">
+         Active
+      </button>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteContact()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success"
+        (click)="updateContact()" >
+        Update
+      </button>
+    </div>
+  
+    <div *ngIf="!currentContact">
+      <br />
+      <p>Loading Contact...</p>
+    </div>
+  </div>

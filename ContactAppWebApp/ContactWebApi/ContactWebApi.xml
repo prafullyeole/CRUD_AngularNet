@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ContactWebApi</name>
+    </assembly>
+    <members>
+        <member name="T:ContactWebApi.AutoMapperProfile">
+            <summary>
+            Auto Mapper for View Model and Model
+            </summary>
+        </member>
+        <member name="M:ContactWebApi.AutoMapperProfile.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:ContactWebApi.Controllers.ContactController">
+            <summary>
+            Contact controll to perform CRUD operation 
+            </summary>
+        </member>
+        <member name="M:ContactWebApi.Controllers.ContactController.#ctor(AutoMapper.IMapper,Services.IContactService)">
+            <summary>
+            Param Costructor
+            </summary>
+            <param name="mapper"></param>
+            <param name="contactService"></param>
+        </member>
+        <member name="M:ContactWebApi.Controllers.ContactController.SaveContact(ContactWebApi.ViewModel.ContactViewModel)">
+            <summary>
+            Save Contact
+            </summary>
+            <param name="contactViewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ContactWebApi.Controllers.ContactController.GetAll">
+            <summary>
+            Get All Contacts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ContactWebApi.Controllers.ContactController.GetContact(System.Int32)">
+            <summary>
+            Get contact details
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ContactWebApi.Controllers.ContactController.SearchContact(System.String)">
+            <summary>
+            Search contact
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ContactWebApi.Controllers.ContactController.UpdateContact(System.Int32,ContactWebApi.ViewModel.ContactViewModel)">
+            <summary>
+            Update Contact Details
+            </summary>
+            <param name="id"></param>
+            <param name="contactViewModel"></param>
+        </member>
+        <member name="M:ContactWebApi.Controllers.ContactController.DeleteContact(System.Int32)">
+            <summary>
+            Delete contact from list
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:ContactWebApi.Controllers.ContactController.DeleteAll">
+            <summary>
+            Remove all contacts
+            </summary>
+        </member>
+        <member name="T:ContactWebApi.CustomMiddleware.ExceptionMiddleware">
+            <summary>
+            Custom middle ware to handle error from web API
+            </summary>
+        </member>
+        <member name="M:ContactWebApi.CustomMiddleware.ExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="next"></param>  
+        </member>
+        <member name="M:ContactWebApi.CustomMiddleware.ExceptionMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Handle HttpContext
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ContactWebApi.CustomMiddleware.ExceptionMiddleware.HandleExceptionAsync(Microsoft.AspNetCore.Http.HttpContext,System.Exception)">
+            <summary>
+            Handle Excption Async
+            </summary>
+            <param name="context"></param>
+            <param name="exception"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ContactWebApi.Extensions.ExceptionMiddlewareExtension">
+            <summary>
+            Exception middleware to handle error from API
+            </summary>
+        </member>
+        <member name="M:ContactWebApi.Extensions.ExceptionMiddlewareExtension.ConfigureExceptionHandler(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Handle Exception
+            </summary>
+            <param name="app"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:ContactWebApi.Extensions.ExceptionMiddlewareExtension.ConfigureCustomExceptionMiddleware(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Extention Method for IApplicationBuilder
+            </summary>
+            <param name="app"></param>
+        </member>
+        <member name="T:ContactWebApi.Program">
+            <summary>
+            Here we can setup your project startup class
+            </summary>
+        </member>
+        <member name="M:ContactWebApi.Program.Main(System.String[])">
+            <summary>
+            Entry point of application
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:ContactWebApi.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Creat web host builder for your application
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ContactWebApi.Startup">
+            <summary>
+            Application Startup class
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.Startup.Configuration">
+            <summary>
+            Application Configuration
+            </summary>
+        </member>
+        <member name="M:ContactWebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:ContactWebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ContactWebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="M:ContactWebApi.Startup.RegisterServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Regsiter application services
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ContactWebApi.Startup.RegisterRepository(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register Application Repository
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:ContactWebApi.Startup.ConfigureSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configure Swagger for your API 
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:ContactWebApi.ViewModel.ContactViewModel">
+            <summary>
+            Contact View Model
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ContactViewModel.Id">
+            <summary>
+            Primary Key
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ContactViewModel.FirstName">
+            <summary>
+            First Name
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ContactViewModel.LastName">
+            <summary>
+            Last Name
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ContactViewModel.Email">
+            <summary>
+            Email
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ContactViewModel.PhoneNumber">
+            <summary>
+            Phone Number
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ContactViewModel.Status">
+            <summary>
+            Contact Status
+            </summary>
+        </member>
+        <member name="T:ContactWebApi.ViewModel.ErrorDetail">
+            <summary>
+            Model for error details
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ErrorDetail.StatusCode">
+            <summary>
+            Https Status code for error
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ErrorDetail.Message">
+            <summary>
+            Error Message
+            </summary>
+        </member>
+        <member name="M:ContactWebApi.ViewModel.ErrorDetail.ToString">
+            <summary>
+            Serialize object to Json format
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ContactWebApi.ViewModel.ResultViewModel">
+            <summary>
+            This is Json Result object which has to return by each controller action method
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ResultViewModel.Data">
+            <summary>
+            Any object which need to return to View
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ResultViewModel.ExceptionInfo">
+            <summary>
+            Excetion information in case need to provide to end user
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ResultViewModel.Message">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ResultViewModel.Messages">
+            <summary>
+            Array of multiple messages
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ResultViewModel.IsSuccess">
+            <summary>
+            Request success or not
+            </summary>
+        </member>
+        <member name="P:ContactWebApi.ViewModel.ResultViewModel.StatusCode">
+            <summary>
+            Http Status code 
+            </summary>
+        </member>
+    </members>
+</doc>

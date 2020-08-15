@@ -1,0 +1,21 @@
+.disable{
+    color: lightgray;
+    font-weight: bold;
+}
+
+.inActive {
+    height: 20px;
+    width: 20px;
+    background-color:gray;
+    border-radius: 50%;
+    display: inline-block;
+    color: gray;
+  }
+
+  .Active {
+    height: 20px;
+    width: 20px;
+    background-color: forestgreen;
+    border-radius: 50%;
+    display: inline-block;
+  }

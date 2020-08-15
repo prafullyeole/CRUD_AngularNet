@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/51d0356f-f632-455b-b64a-7b2848eb5230/resourceGroups/Az300-Study/providers/Microsoft.Web/sites/contactwebappdemo",
+    "appService.deploySubpath": "dist\\ClientApp"
+}
